@@ -51,6 +51,15 @@ textarea{min-height:85px;resize:vertical}
 .foot{text-align:center;color:var(--muted);padding:20px 8px 30px;font-size:12px}
 small{color:var(--muted)}
 </style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZV6VZ2M0GG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZV6VZ2M0GG');
+</script>
+
 </head>
 <body>
 <header><h1>NEXTOOLS</h1><p>Simple tools. Unlimited style. ✦ Version 2.4</p></header>
@@ -68,7 +77,7 @@ small{color:var(--muted)}
 <h2>✦ QR Code Generator</h2>
 <p class="sub">Ubah link atau teks jadi QR Code, lalu simpan sebagai gambar PNG.</p>
 <label for="qrtext">Link atau teks</label>
-<textarea id="qrtext" placeholder="Contoh: Hidup jokowi atau sawit.com/"></textarea>
+<textarea id="qrtext" placeholder="Contoh: Bowo menjual sawit atau Masukan link yang mau di jadikan QR"></textarea>
 <div class="row">
 <div><label for="qrsize">Ukuran QR</label>
 <select id="qrsize">
