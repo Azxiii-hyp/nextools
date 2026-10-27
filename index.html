@@ -4,9 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#071018">
-<meta name="description" content="NEXTOOLS — QR Code Generator, nickname unik, text styler, dan kalkulator tanggal gratis.">
-<meta name="description" content="NEXTOOLS — QR Code, nickname, text styler, text tools, dan kalkulator tanggal gratis.">
-<title>NEXTOOLS 2.4</title>
+<meta name="description" content="NEXTOOLS menyediakan QR Code Generator, Text Tools, Text Styler, dan Kalkulator Tanggal gratis.">
+<title>NEXTOOLS 2.6</title>
 <style>
 :root{--bg:#071018;--panel:#0d1b27;--line:#183747;--cyan:#22d3ee;--muted:#91a8b8;--white:#edfaff}
 *{box-sizing:border-box}
@@ -62,22 +61,23 @@ small{color:var(--muted)}
 
 </head>
 <body>
-<header><h1>NEXTOOLS</h1><p>Simple tools. Unlimited style. ✦ Version 2.4</p></header>
+<header><h1>NEXTOOLS</h1><p>Simple tools. Unlimited style. ✦ Version 2.6</p></header>
 <main class="wrap">
 <nav class="nav">
 <a href="#qr">QR Generator</a>
-<a href="#nickname">Nickname</a>
 <a href="#styler">Text Styler</a>
 <a href="#texttools">Text Tools</a>
 <a href="#tanggal">Kalkulator Tanggal</a>
 <a href="#tentang">Tentang</a>
+<a href="#kontak">Kontak</a>
+<a href="#privasi">Privasi</a>
 </nav>
 
 <section class="card" id="qr">
 <h2>✦ QR Code Generator</h2>
 <p class="sub">Ubah link atau teks jadi QR Code, lalu simpan sebagai gambar PNG.</p>
 <label for="qrtext">Link atau teks</label>
-<textarea id="qrtext" placeholder="Contoh: Bowo menjual sawit atau Masukan link yang mau di jadikan QR"></textarea>
+<textarea id="qrtext" placeholder="Contoh: https://azxiii-hyp.github.io/nextools/"></textarea>
 <div class="row">
 <div><label for="qrsize">Ukuran QR</label>
 <select id="qrsize">
@@ -143,8 +143,30 @@ small{color:var(--muted)}
 
 <section class="card" id="tentang">
 <h2>✦ Tentang NEXTOOLS</h2>
-<p class="sub">Kumpulan alat gratis sederhana untuk membuat QR Code, nickname, teks bergaya, dan menghitung tanggal.</p>
-<small>Kontak: </small>
+<p class="sub">Kumpulan alat web gratis untuk membuat QR Code, mengolah teks, dan menghitung selisih tanggal. NEXTOOLS dirancang agar sederhana dan mudah digunakan lewat browser.</p>
+</section>
+<section class="card" id="kontak">
+<h2>✦ Kontak</h2>
+<p>Kalau menemukan masalah, punya saran, atau ingin melaporkan sesuatu tentang NEXTOOLS, lu bisa menghubungi pengelola melalui halaman repositori GitHub.</p>
+<p><a href="https://github.com/Azxiii-hyp/nextools/issues" target="_blank" rel="noopener noreferrer" style="color:var(--cyan)">Hubungi pengelola / laporkan masalah di GitHub</a></p>
+<p class="sub">Jangan kirim kata sandi, data pembayaran, atau informasi pribadi yang sensitif.</p>
+</section>
+<section class="card" id="privasi">
+<h2>✦ Kebijakan Privasi</h2>
+<p><strong>Terakhir diperbarui: 27 Oktober 2026</strong></p>
+<p>NEXTOOLS menyediakan alat sederhana yang dapat digunakan melalui browser. Kebijakan ini menjelaskan secara ringkas bagaimana data diproses saat lu menggunakan website.</p>
+<h3>Data penggunaan</h3>
+<p>Website ini menggunakan Google Analytics untuk mengukur kunjungan dan memahami penggunaan halaman. Layanan tersebut dapat memproses informasi penggunaan seperti halaman yang dibuka, informasi perangkat/browser, perkiraan lokasi umum, dan interaksi. Pengumpulan data bergantung pada konfigurasi layanan dan pengaturan browser.</p>
+<h3>QR Code</h3>
+<p>Fitur QR Code menggunakan layanan pihak ketiga QuickChart untuk membuat gambar QR. Teks atau URL yang lu masukkan ke fitur tersebut dikirim ke layanan itu agar QR dapat dibuat. Hindari memasukkan kata sandi, data pribadi, atau informasi rahasia.</p>
+<h3>Fitur teks dan tanggal</h3>
+<p>Text Tools, Text Styler, dan Kalkulator Tanggal memproses masukan di browser pada perangkat lu; website ini tidak sengaja mengirim masukan tersebut ke server NEXTOOLS.</p>
+<h3>Layanan pihak ketiga</h3>
+<p>Google Analytics dan QuickChart memiliki kebijakan privasi masing-masing. Pemrosesan oleh layanan tersebut tunduk pada ketentuan mereka.</p>
+<h3>Perubahan kebijakan</h3>
+<p>Kebijakan ini dapat diperbarui jika fitur atau layanan website berubah. Versi terbaru akan ditampilkan di halaman ini.</p>
+<h3>Kontak</h3>
+<p>Untuk pertanyaan tentang privasi, hubungi pengelola melalui <a href="https://github.com/Azxiii-hyp/nextools/issues" target="_blank" rel="noopener noreferrer" style="color:var(--cyan)">halaman Issues NEXTOOLS di GitHub</a>.</p>
 </section>
 <section class="card" id="styler">
 <h2>✦ Text Styler — banyak gaya</h2><p class="sub">Masukkan teks, lalu salin gaya yang lu suka. Sebagian karakter khusus mungkin tidak didukung semua game.</p>
@@ -154,7 +176,7 @@ small{color:var(--muted)}
 
 
 
-<footer class="foot">© 2026 NEXTOOLS · Dibuat untuk penggunaan yang simpel.</footer>
+<footer class="foot">© 2026 NEXTOOLS · <a href="#privasi" style="color:var(--cyan)">Kebijakan Privasi</a> · <a href="#kontak" style="color:var(--cyan)">Kontak</a></footer>
 </main>
 
 <script>
