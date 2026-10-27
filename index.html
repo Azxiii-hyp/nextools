@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d18">
+<meta name="description" content="NEXTOOLS adalah kumpulan tools online gratis untuk gaming dan produktivitas.">
+<title>NEXTOOLS — Digital Toolbox</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#080d18;color:#e8f1ff;font-family:system-ui,Arial,sans-serif}header{padding:22px 18px;border-bottom:1px solid #202b40;position:sticky;top:0;background:#080d18f5;z-index:2}.wrap{max-width:850px;margin:auto}.logo{font-size:24px;font-weight:900;letter-spacing:2px}.logo span{color:#67e8f9}.tag{font-size:12px;color:#8294af;margin-top:4px}.hero{padding:34px 18px 22px}.pill{display:inline-block;color:#67e8f9;border:1px solid #234758;border-radius:30px;padding:6px 11px;font-size:12px}.hero h1{font-size:clamp(30px,8vw,48px);line-height:1.12;margin:18px 0 10px}.hero h1 span{color:#67e8f9}.muted{color:#91a2bc;line-height:1.6}.search{width:100%;padding:15px;background:#111a2b;color:white;border:1px solid #293750;border-radius:12px;font-size:16px;margin-top:20px;outline:none}.search:focus,input:focus,textarea:focus,select:focus{border-color:#67e8f9}.section{padding:10px 18px 26px}.section h2{font-size:18px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{background:#10192a;border:1px solid #25344c;border-radius:14px;padding:17px 13px;cursor:pointer;color:#edf5ff;text-align:left}.card:hover{border-color:#67e8f9}.emoji{font-size:25px}.card h3{font-size:14px;margin:12px 0 5px}.card p{font-size:12px;color:#91a2bc;margin:0;line-height:1.5}.panel{margin:0 18px 24px;background:#10192a;border:1px solid #293750;border-radius:16px;padding:18px;scroll-margin-top:100px}.panel h2{margin-top:0}.field{display:block;width:100%;padding:12px;margin:9px 0 13px;background:#080f1e;color:white;border:1px solid #30405a;border-radius:9px;font-size:15px}.btn{border:0;border-radius:9px;background:#67e8f9;color:#06111d;padding:12px 16px;font-weight:800;font-size:14px;cursor:pointer;margin:3px 4px 3px 0}.btn.secondary{background:#1b2940;color:#e8f1ff;border:1px solid #33445e}.result{white-space:pre-wrap;overflow-wrap:anywhere;background:#080f1e;border:1px solid #293750;border-radius:9px;padding:13px;min-height:45px;margin:12px 0;color:#a5f3fc}.hidden{display:none}footer{text-align:center;color:#70819a;font-size:12px;padding:28px 15px;border-top:1px solid #202b40}.empty{color:#91a2bc;font-size:13px;grid-column:1/-1}@media(min-width:600px){.hero{padding-top:48px}.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="logo">NEX<span>TOOLS</span> ⚡</div><div class="tag">YOUR DIGITAL TOOLBOX · FREE TO USE</div></div></header>
+<main class="wrap">
+<section class="hero"><div class="pill">✦ DIGITAL TOOLS / BETA</div><h1>Tools for your<br><span>digital life.</span></h1><p class="muted">Tools praktis, gratis, dan simpel. Pilih alat yang lu butuhkan.</p><input id="search" class="search" placeholder="🔎 Cari tools..." aria-label="Cari tools"></section>
+<section class="section"><h2>✦ Explore Tools</h2><div class="cards" id="cards">
+<button class="card" data-tool="nick"><div class="emoji">🎮</div><h3>Nickname Generator</h3><p>Bikin nama gaming unik.</p></button>
+<button class="card" data-tool="bio"><div class="emoji">👤</div><h3>Bio Generator</h3><p>Buat bio keren siap salin.</p></button>
+<button class="card" data-tool="style"><div class="emoji">✨</div><h3>Text Styler</h3><p>Ubah teks jadi gaya Unicode.</p></button>
+<button class="card" data-tool="date"><div class="emoji">📅</div><h3>Date Calculator</h3><p>Hitung selisih dua tanggal.</p></button>
+</div></section>
+<section class="panel hidden" id="panel">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><h2 id="panelTitle">Tool</h2><button class="btn secondary" id="close">Tutup ✕</button></div>
+<div id="toolContent"></div>
+</section>
+</main>
+<footer><div class="logo" style="font-size:18px">NEX<span>TOOLS</span> ⚡</div><p>Tools gratis untuk kebutuhan digital lu.</p><p>© <span id="year"></span> NEXTOOLS · Made for everyone</p></footer>
+<script>
+const $=id=>document.getElementById(id);
+const panel=$('panel'),content=$('toolContent');
+$('year').textContent=new Date().getFullYear();
+const tools={
+nick:{title:'🎮 Nickname Generator',html:'<label for="nickName">Nama dasar</label><input class="field" id="nickName" maxlength="24" placeholder="Contoh: Mulyono"><label for="nickStyle">Gaya nickname</label><select class="field" id="nickStyle"><option value="pro">Pro Gamer</option><option value="dark">Dark</option><option value="symbol">Simbol</option><option value="clean">Minimalis</option></select><button class="btn" id="generate">Generate Nickname</button><div class="result" id="result"></div><button class="btn secondary" id="copy">Salin hasil</button>'},
+bio:{title:'👤 Bio Generator',html:'<label for="bioName">Nama atau panggilan</label><input class="field" id="bioName" maxlength="30" placeholder="Nama lu"><label for="bioMood">Tema bio</label><select class="field" id="bioMood"><option value="gamer">Gamer</option><option value="cool">Cool & simple</option><option value="dream">Dream chaser</option></select><button class="btn" id="generate">Buat Bio</button><div class="result" id="result"></div><button class="btn secondary" id="copy">Salin hasil</button>'},
+style:{title:'✨ Text Styler',html:'<label for="styleInput">Teks yang mau diubah</label><input class="field" id="styleInput" maxlength="100" placeholder="Ketik teks di sini"><label for="styleChoice">Gaya tulisan</label><select class="field" id="styleChoice"><option value="bold">Bold — 𝗧𝗲𝘅𝘁</option><option value="italic">Italic — 𝘛𝘦𝘹𝘵</option><option value="script">Script — 𝒯𝑒𝓍𝓉</option><option value="mono">Monospace — 𝚃𝚎𝚡𝚝</option></select><button class="btn" id="generate">Ubah Teks</button><div class="result" id="result"></div><button class="btn secondary" id="copy">Salin hasil</button><p class="muted" style="font-size:12px">Beberapa karakter khusus mungkin tidak tampil di semua aplikasi.</p>'},
+date:{title:'📅 Date Calculator',html:'<label for="start">Tanggal awal</label><input class="field" type="date" id="start"><label for="end">Tanggal akhir</label><input class="field" type="date" id="end"><button class="btn" id="generate">Hitung Selisih</button><div class="result" id="result"></div>'}
+};
+function openTool(name){let t=tools[name];if(!t)return;$('panelTitle').textContent=t.title;content.innerHTML=t.html;panel.classList.remove('hidden');panel.scrollIntoView({behavior:'smooth',block:'start'});const result=()=> $('result');const input=id=>$(id).value.trim();
+if(name==='nick'){$('generate').onclick=()=>{let n=input('nickName');if(!n){result().textContent='Masukkan nama dulu.';return}let styles={pro:['亗 '+n+' 亗','乂'+n+'乂','『'+n+'』','ツ '+n,'么'+n+'么'],dark:['☠ '+n,'𖤐'+n+'𖤐','†'+n+'†','メ'+n,'影 '+n],symbol:['★彡'+n+'彡★','꧁'+n+'꧂','『'+n+'』','乂 '+n+' 乂','♛'+n+'♛'],clean:[n,n+'_',n+'.exe','its'+n,n+'ツ']};result().textContent=styles[$('nickStyle').value].join('\n')};}
+if(name==='bio'){$('generate').onclick=()=>{let n=input('bioName')||'Player';let b={gamer:['🎮 '+n+' | Just play.','⚡ Leveling up every day.','🏆 Play hard, stay humble.'],cool:['Less talk, more action.','✦ '+n+' | On my own path.','☁️ Calm mind, big dreams.'],dream:['✦ Dream big, start small.','🚀 '+n+' | Work in progress.','🌙 One day at a time.']};result().textContent=b[$('bioMood').value].join('\n')};}
+if(name==='style'){$('generate').onclick=()=>{let s=input('styleInput');if(!s){result().textContent='Masukkan teks dulu.';return}let bases={bold:0x1D5D4,italic:0x1D608,script:0x1D4D0,mono:0x1D670};let base=bases[$('styleChoice').value];result().textContent=Array.from(s).map(c=>{let code=c.codePointAt(0);if(code>=65&&code<=90)return String.fromCodePoint(base+code-65);if(code>=97&&code<=122)return String.fromCodePoint(base+26+code-97);return c}).join('')};}
+if(name==='date'){$('generate').onclick=()=>{let a=$('start').value,b=$('end').value;if(!a||!b){result().textContent='Pilih kedua tanggal dulu.';return}let days=Math.round(Math.abs(Date.parse(b+'T00:00:00Z')-Date.parse(a+'T00:00:00Z'))/86400000);result().textContent='Selisih: '+days+' hari\nSekitar '+(days/365.2425).toFixed(2)+' tahun';};}
+if($('copy'))$('copy').onclick=async()=>{let text=result().textContent;if(!text)return;try{await navigator.clipboard.writeText(text);$('copy').textContent='Tersalin ✓'}catch(e){let ta=document.createElement('textarea');ta.value=text;content.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();$('copy').textContent='Tersalin ✓'}};
+}
+document.querySelectorAll('[data-tool]').forEach(b=>b.addEventListener('click',()=>openTool(b.dataset.tool)));
+$('close').onclick=()=>panel.classList.add('hidden');
+$('search').addEventListener('input',e=>{let q=e.target.value.toLowerCase(),shown=0;document.querySelectorAll('.card').forEach(c=>{let match=c.innerText.toLowerCase().includes(q);c.style.display=match?'block':'none';if(match)shown++});let old=document.querySelector('.empty');if(old)old.remove();if(!shown){let p=document.createElement('p');p.className='empty';p.textContent='Tools tidak ditemukan. Coba kata kunci lain.';$('cards').appendChild(p)}});
+</script>
+</body>
+</html>
